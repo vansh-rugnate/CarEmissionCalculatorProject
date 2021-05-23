@@ -28,7 +28,7 @@ function getData(){
   var mileage = prompt("Mileage (km)");
   var lowermileage = mileage.toLowerCase();
   console.log(lowermake, lowermodel, lowermileage)
-
+  console.log(lowermake)
 
   const search = obj => obj.carmake === lowermake;
   const i = emissions.findIndex(search)
