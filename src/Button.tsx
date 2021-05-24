@@ -2,11 +2,12 @@ import styled from 'styled-components';
 import React from 'react'; 
 import { TextField } from '@material-ui/core';
 import { FieldProps } from 'formik';
+import getData from './App.tsx'
 
 const StyledButton = styled.button`
 	text-align: 'center' as center;
 	font-size: 0.8rem;
-	border-radius: 10px;
+	border-radius: 6px;
     padding: 0.15em 3.75em;
     background: lightgreen;
     color: black;
@@ -14,7 +15,7 @@ const StyledButton = styled.button`
 `;
 
 const Button = ({ children }) => {
-	return <StyledButton>{children}</StyledButton>;
+	return <StyledButton onClick={getData}>{children}</StyledButton>;
 };
 
 

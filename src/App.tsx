@@ -20,7 +20,7 @@ const emissions: cardetails[] = [
     },
 ]
 
-function getData(){
+const getData =() =>{
   var make = prompt("Make");
   var lowermake = make.toLowerCase();
   var model = prompt("Model");
@@ -28,8 +28,7 @@ function getData(){
   var mileage = prompt("Mileage (km)");
   var lowermileage = mileage.toLowerCase();
   console.log(lowermake, lowermodel, lowermileage)
-  console.log(lowermake)
-
+  
   const search = obj => obj.carmake === lowermake;
   const i = emissions.findIndex(search)
   console.log(i)
@@ -43,9 +42,11 @@ function getData(){
 
 const App = ()=>{
   return (
-    <form>
-      <Button onclick='getData()'>CALCULATE</Button>
-    </form>
+  <form>  
+    <Button onClick={getData}>
+    CALCULATE
+    </Button>
+  </form>
   );
 }
 
