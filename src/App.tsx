@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import './App.css';
-import React, { useState } from 'react';
+import React, { useState, Component, MouseEvent } from 'react';
 import './car_array.js';
 import styled from 'styled-components';
 import Button from './Button.tsx';
@@ -20,7 +20,8 @@ const emissions: cardetails[] = [
     },
 ]
 
-const getData =() =>{
+
+export const getData = () =>{
   var make = prompt("Make");
   var lowermake = make.toLowerCase();
   var model = prompt("Model");
@@ -40,14 +41,20 @@ const getData =() =>{
   alert('The total carbon dioxide emitted by your vehicle over its lifespan is: ' + TotalEmissions + ' grams')
 }
 
-const App = ()=>{
+const App = () => {
+  
+const getData = () => {
+  const clickEvent:(Event: React.MouseEvent<HTMLButtonElement>) => void = () => {
+    console.log('it works!')
+  }
+}  
   return (
   <form>  
-    <Button onClick={getData}>
+    <Button type='button' onClick={clickEvent}>
     CALCULATE
     </Button>
   </form>
-  );
+  )
 }
 
 export default App;

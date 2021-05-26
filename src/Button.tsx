@@ -15,7 +15,7 @@ const StyledButton = styled.button`
 `;
 
 const Button = ({ children }) => {
-	return <StyledButton onClick={getData}>{children}</StyledButton>;
+	return <StyledButton>{children}</StyledButton>;
 };
 
 
