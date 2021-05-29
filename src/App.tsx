@@ -41,20 +41,18 @@ export const getData = () =>{
   alert('The total carbon dioxide emitted by your vehicle over its lifespan is: ' + TotalEmissions + ' grams')
 }
 
-const App = () => {
+class App extends React.Component {
   
-const getData = () => {
-  const clickEvent:(Event: React.MouseEvent<HTMLButtonElement>) => void = () => {
-    console.log('it works!')
+  clicked(){
+    console.log('it works')
   }
-}  
-  return (
-  <form>  
-    <Button type='button' onClick={clickEvent}>
-    CALCULATE
-    </Button>
-  </form>
-  )
+  
+  render(){
+    
+    return<div>
+      <Button onClick={ this.clicked }>calculate</Button>
+    </div>;
+  }
 }
 
 export default App;

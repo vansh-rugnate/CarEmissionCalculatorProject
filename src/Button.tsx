@@ -15,7 +15,7 @@ const StyledButton = styled.button`
 `;
 
 const Button = ({ children }) => {
-	return <StyledButton>{children}</StyledButton>;
+	return <StyledButton type='button'>{children}</StyledButton>;
 };
 
 
