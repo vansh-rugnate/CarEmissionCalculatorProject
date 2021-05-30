@@ -7,6 +7,7 @@ import Button from './Button.tsx';
 import MakeField from './MakeField.tsx';
 import ModelField from './ModelField.tsx';
 import MileageField from './MileageField.tsx';
+import { TextField } from '@material-ui/core'
 
 type cardetails = [string, number]
 const emissions: cardetails[] = [
@@ -21,42 +22,51 @@ const emissions: cardetails[] = [
 ]
 
 
-export const getData = () =>{
-  var make = prompt("Make");
-  var lowermake = make.toLowerCase();
-  var model = prompt("Model");
-  var lowermodel = model.toLowerCase();
-  var mileage = prompt("Mileage (km)");
-  var lowermileage = mileage.toLowerCase();
-  console.log(lowermake, lowermodel, lowermileage)
-  
-  const search = obj => obj.carmake === lowermake;
-  const i = emissions.findIndex(search)
-  console.log(i)
-  console.log(emissions[i].co2)
-
-  const TotalEmissions = emissions[i].co2 * mileage
-  console.log(TotalEmissions)
-
-  alert('The total carbon dioxide emitted by your vehicle over its lifespan is: ' + TotalEmissions + ' grams')
-}
 
 const App = () => {
   
-  function clicked(){
-    console.log('it works')
-  }
-  
-  render(){
+  const showData = () => {
     
-    return<div>
-      <Button onClick={ clicked }>calculate</Button>
-    </div>;
-  }
+    var lowermake = make.toLowerCase();
+    const search = obj => obj.carmake === lowermake;
+    const i = emissions.findIndex(search)
+    const TotalEmissions = emissions[i].co2 * mileage
+    alert('The total carbon dioxide emitted by your vehicle over its lifespan is: ' + TotalEmissions + ' grams')
+  }  
+  
+  return(
+    <div>
+      <h1>
+        What is CO2?
+      </h1>
+      <h1>
+        CO2 is the fundamental right
+      </h1>
+      <div>
+        <TextField id='make' label='Make' type='text'>
+        Make
+        </TextField>
+        <h1>
+        </h1>
+        <TextField id='model' label='Model' type='text'>
+        Model
+        </TextField>
+        <h1>
+        </h1>
+        <TextField id='mileage' label='Mileage' type='text'>
+        Mileage
+        </TextField>
+        <h1>
+        </h1>
+      </div>
+        <button type='button' onClick = { showData }>
+        calculate
+        </button>
+    </div>
+  
+  )
+  
+
+  
 }
-
 export default App;
-
-
-
-
