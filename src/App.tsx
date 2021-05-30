@@ -41,16 +41,16 @@ export const getData = () =>{
   alert('The total carbon dioxide emitted by your vehicle over its lifespan is: ' + TotalEmissions + ' grams')
 }
 
-class App extends React.Component {
+const App = () => {
   
-  clicked(){
+  function clicked(){
     console.log('it works')
   }
   
   render(){
     
     return<div>
-      <Button onClick={ this.clicked }>calculate</Button>
+      <Button onClick={ clicked }>calculate</Button>
     </div>;
   }
 }
