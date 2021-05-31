@@ -19,54 +19,66 @@ const emissions: cardetails[] = [
       carmake:'mercedes',
       co2: 130, 
     },
+    {
+      carmake:'toyota',
+      co2: 100, 
+    },
 ]
 
 
 
 const App = () => {
   
-  const showData = () => {
+  const getData = () => {
+    
+    var make = prompt('Enter the make of your car here:');
+    
+    if (make === null ) {
+      alert('You have cancelled the calculation!')
+      return;
+    }
+    
+    if (make === '' ) {
+      alert('You have to enter a make!')
+      return;
+    }
     
     var lowermake = make.toLowerCase();
+    
+    var model = prompt('Enter the model of your car here:')
+    
+    var mileage = prompt('Enter the mileage of your car (in km) here:')
+    
+    if (mileage === null ) {
+      alert('You have cancelled the calculation!')
+      return;
+    }
+    
+    if (mileage === '' ) {
+      alert('You have to enter a mileage!')
+      return;
+    }
+    
+    if (isNaN(mileage)) {
+      alert('You have to enter a number!')
+      return;
+    }
+
     const search = obj => obj.carmake === lowermake;
+    
     const i = emissions.findIndex(search)
+    
     const TotalEmissions = emissions[i].co2 * mileage
+    
     alert('The total carbon dioxide emitted by your vehicle over its lifespan is: ' + TotalEmissions + ' grams')
   }  
   
   return(
-    <div>
-      <h1>
-        What is CO2?
-      </h1>
-      <h1>
-        CO2 is the fundamental right
-      </h1>
-      <div>
-        <TextField id='make' label='Make' type='text'>
-        Make
-        </TextField>
-        <h1>
-        </h1>
-        <TextField id='model' label='Model' type='text'>
-        Model
-        </TextField>
-        <h1>
-        </h1>
-        <TextField id='mileage' label='Mileage' type='text'>
-        Mileage
-        </TextField>
-        <h1>
-        </h1>
-      </div>
-        <button type='button' onClick = { showData }>
-        calculate
-        </button>
-    </div>
-  
+    
+    <button type='button' onClick = { getData }>calculate</button>
+    
   )
   
-
-  
 }
+
 export default App;
