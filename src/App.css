@@ -1,5 +1,22 @@
+.styled-button {
+  background-color: rgb(9, 113, 241); 
+  cursor: pointer;
+  top: 50%;
+  border-width: 1.75px;
+  border-color: lawngreen;  
+  color: white;
+  text-align: center;
+}
+
+
+.styled-body {
+  color: black;
+}
+
+
 .App {
   text-align: center;
+  style.left: 50%;
 }
 
 .App-logo {
