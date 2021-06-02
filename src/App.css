@@ -1,11 +1,18 @@
 .styled-button {
+  margin-top: 25%;
+  margin-left: 48%;
+  font-size: 11.5px;
   background-color: rgb(9, 113, 241); 
   cursor: pointer;
+  padding: 0;
   top: 50%;
-  border-width: 1.75px;
-  border-color: lawngreen;  
+  border-width: 1.85px;
+  border-color: black;  
   color: white;
   text-align: center;
+  width: 80px;
+  height: 25px;
+  align-items: center;
 }
 
 
