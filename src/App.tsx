@@ -1,7 +1,8 @@
-import './car_array.js';
+//import './car_array.js';
 import './App.css';
 import './index.css';
-import LinearGradient from 'react-native-linear-gradient'
+//@ts-ignore
+//import CarArray from './car_array.js';
 //import { useForm } from "react-hook-form";
 //import React, { useState, Component, MouseEvent } from 'react';
 //import styled from 'styled-components';
@@ -12,10 +13,27 @@ import LinearGradient from 'react-native-linear-gradient'
 //import { TextField } from '@material-ui/core'
 
 
-// make an array for the different cars with corresponding g/km
-type cardetails = [string, number]
+
+
+//make an array for the different cars with corresponding g/km
+type cardetails = [string , number]
 
 const emissions: cardetails[] = [
+    
+    {
+      carmake:'audi',
+      co2: 150,
+    },
+
+    {
+      carmake:'aston martin',
+      co2: 300,
+    },
+
+    {
+      carmake:'alfa romeo',
+      co2: 128,
+    },
     
     {
       carmake:'volkswagen',
@@ -33,6 +51,10 @@ const emissions: cardetails[] = [
     },
 
 ]
+
+
+
+
 
 
 // start a const of App
@@ -55,10 +77,10 @@ const App = () => {
       return;
     }
     
-    if (isNaN(make) === false){
-      alert('You have to enter a make!')
-      return;
-    }
+    // if (isNaN(make) === false){
+    //   alert('You have to enter a make!')
+    //   return;
+    // }
     
     // allow user to input the make in caps
     var lowermake = make.toLowerCase();
@@ -108,19 +130,22 @@ const App = () => {
     
     // make a button with type, className and onClick
       
+    <div
 
-    <LinearGradient 
-    
-    className = 'styled-body'
-    
-    colors = {{'#11998e','#38ef7d'}}
+    className='body'
 
     >  
+
+      <h1 className='title'> Car Emissions Calculator </h1>
+
+      <h1 className='subtitle1'> What is carbon dioxide? </h1>
+
+      <h1 className='text'> Carbon dioxide is a greenhouse gas. </h1>
 
       <button 
         
       type='button' 
-      className='styled-button' 
+      className='button' 
       onClick = {getData} 
         
       >
@@ -128,10 +153,8 @@ const App = () => {
       CALCULATE
         
       </button>
-      
-    </LinearGradient>
-
-    
+        
+    </div>
 
   );
   
