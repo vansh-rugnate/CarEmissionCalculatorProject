@@ -1,4 +1,5 @@
 //import './car_array.js';
+import { Helmet } from 'react-helmet';
 import './App.css';
 import './index.css';
 //@ts-ignore
@@ -11,6 +12,8 @@ import './index.css';
 //import ModelField from './ModelField.tsx';
 //import MileageField from './MileageField.tsx';
 //import { TextField } from '@material-ui/core'
+
+
 
 
 
@@ -126,6 +129,9 @@ const App = () => {
   
   
   
+  
+
+
   return(
     
     // make a button with type, className and onClick
@@ -136,11 +142,22 @@ const App = () => {
 
     >  
 
-      <h1 className='title'> Car Emissions Calculator </h1>
+      <Helmet> 
+      
+        <title lang = 'en'>
+          Car Emissions Calculator 
+        </title>
+      
+      </Helmet>
 
+    
       <h1 className='subtitle1'> What is carbon dioxide? </h1>
 
       <h1 className='text'> Carbon dioxide is a greenhouse gas. </h1>
+
+      <h1 className='subtitle1'> Why does carbon dioxide affect us? </h1>
+      
+      <h1 className='text'> Carbon dioxide affects us because it causes global warming. </h1>
 
       <button 
         
