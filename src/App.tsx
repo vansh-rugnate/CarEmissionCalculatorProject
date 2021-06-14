@@ -28,16 +28,20 @@ import './index.css';
 
 // ]
 
-type Emissions = [carmake: string, co2: number]
-
-const emissions : Emissions[] = [
-  
-  ['mercedes',130],
-  
-  ['volkswagen',120],  
-
-]
-console.log(emissions[0][1])
+let cars : { carmake: any; co2: any }[] = [
+  {
+  carmake:'vw',
+  co2:100,
+  },
+  {
+  carmake:'merc', 
+  co2:110,
+  },
+  {
+  carmake:'audi', 
+  co2:120,
+  }
+];
 
 // emissions = ['w',5,'h',5];
     
@@ -242,10 +246,11 @@ const App = () => {
     var lowermake = make.toLowerCase();
     
     // find index of make in terms of carmake
-    var search = emissions.filter(order => (emissions.carmake === make));
+
+    const search = (obj:any) => obj.carmake === lowermake;
     
     // find index of the array which has the make
-    var i = emissions.findIndex(search)
+    var i = cars.findIndex(search)
 
     // if the make is not present in array, alert user
     if (i === -1) {
@@ -254,7 +259,7 @@ const App = () => {
     }
     
     // ask for mileage
-    var mileage = prompt('Enter the mileage of your car (in km) here:')
+    var mileage = Number(prompt('Enter the mileage of your car (in km) here:'))
     
     // hand;e cancellation of mileage prompt
     if (mileage === null ) {
@@ -263,7 +268,7 @@ const App = () => {
     }
     
     // handle skipping of mileage prompt
-    if (mileage === '' ) {
+    if (mileage === 0 ) {
       alert('You have to enter a mileage!')
       return;
     }
@@ -275,7 +280,7 @@ const App = () => {
     }
 
     // calculate the total grams of co2 and alert user
-    const TotalEmissions = emissions[i].co2 * mileage
+    const TotalEmissions = cars[i].co2 * mileage
     
     alert('The total carbon dioxide emitted by your vehicle over its lifespan is: ' + TotalEmissions + ' grams')
   }  
