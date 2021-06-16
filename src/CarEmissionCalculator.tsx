@@ -4,7 +4,7 @@ import getData from './App';
 import './App.css';
 import './index.css';
 import { Helmet } from 'react-helmet';
-import { cars } from './CarArray'
+import { cars } from './CarArray';
 
 const CarEmissionsCalculator = () => {
 
@@ -47,28 +47,30 @@ const CarEmissionsCalculator = () => {
     }
     
     // ask for mileage
-    var mileage = Number(prompt('Enter the mileage of your car (in km) here:'))
+    var mileageinmiles = Number(prompt('Enter the mileage of your car (in miles) here:'))
     
     // hand;e cancellation of mileage prompt
-    if (mileage === null ) {
+    if (mileageinmiles === null ) {
       alert('You have cancelled the calculation!')
       return;
     }
     
     // handle skipping of mileage prompt
-    if (mileage === 0 ) {
+    if (mileageinmiles === 0 ) {
       alert('You have to enter a mileage!')
       return;
     }
     
     // if mileage is not a number, ask user to input number
-    if (isNaN(mileage)) {
+    if (isNaN(mileageinmiles)) {
       alert('You have to enter a number!')
       return;
     }
 
+    const mileageinkm = mileageinmiles * 1.60934
+
     // calculate the total grams of co2 and alert user
-    const TotalEmissions = cars[i].co2 * mileage
+    const TotalEmissions = cars[i].co2 * mileageinkm
     
     alert('The total carbon dioxide emitted by your vehicle over its lifespan is: ' + TotalEmissions + ' grams')
     
@@ -76,29 +78,40 @@ const CarEmissionsCalculator = () => {
 
 	return (
 
-		<div>
+		
+    <div className='calcpage'>
 
 			<Helmet> 
       
-        		<title lang = 'en'>
-          		Car Emissions Calculator 
-        		</title>
+        <title lang = 'en'>
+         Car Emissions Calculator 
+        </title>
       
-      		</Helmet>
+      </Helmet>
 
-			<button 
-        
-      		type='button' 
-      		className='button' 
-      		onClick = { getData }
-        
-      		>
-        
-      		CALCULATE
-        
-      		</button>
+		  <div className='calcpage1'>
 
-		</div>
+        <div className='buttonpagebox'>	
+
+          <h1 className='calcpagetext'> Find out an estimation of how many grams of carbon dioxide your car has produced over it's lifetime! </h1>
+
+          <button 
+          
+        	type='button' 
+        	className='button' 
+        	onClick = { getData }
+          
+        	>
+          
+        	CALCULATE
+          
+        	</button>
+
+  		  </div>
+
+      </div>
+
+    </div>
 	);
 }
 

@@ -10,7 +10,7 @@ const NavBar = () => {
 			
 				<Link to =  '/' > Home </Link>
 
-				<Link to = '/CarEmissions' > CarEmissionsCalculator </Link>
+				<Link to = '/CarEmissionsCalculator' > CarEmissionsCalculator </Link>
 
 			</li>
 

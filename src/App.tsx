@@ -4,8 +4,9 @@ import './App.css';
 import './index.css';
 import CarEmissionsCalculator from './CarEmissionCalculator';
 import Home from './Home';
-import { Route, Link, BrowserRouter } from 'react-router-dom';
+import { Route, Link, BrowserRouter as Router, Switch, Redirect } from 'react-router-dom';
 import NavBar from './NavBar'
+import ErrorPage from './ErrorPage'
 //@ts-ignore
 //import CarArray from './car_array.js';
 //import { useForm } from "react-hook-form";
@@ -38,22 +39,18 @@ const App = () => {
     
     // make a button with type, className and onClick
       
-    <div
+    <div >  
 
-    className='body'
-
-    >  
-
-      <BrowserRouter>
-
-      <NavBar />  
-
-        <Route exact path = '/' component = { Home } />
-            
-        <Route exact path = '/CarEmissionCalculator' component = { CarEmissionsCalculator } />
-            
-      </BrowserRouter>
-
+      <Router>      
+        <div className='topbar'>
+          <Link className='homelink' to="/" >Home</Link>
+          <Link className='calclink' to="/CO2Calculator">CO2Calculator</Link>
+        </div>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/CO2Calculator" component={CarEmissionsCalculator} />
+        <Redirect to = "/" />
+      </Router>
+    
     </div>
 
   );

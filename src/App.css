@@ -1,91 +1,126 @@
-.button {
-  border-radius: 5px;
-  margin-top: 5%;
-  margin-bottom: 35%;
-  margin-left: 47%;
-  font-size: 13px;
-  background-color: rgb(9, 113, 241); 
-  cursor: pointer;
-  padding: 0em;
-  border-width: 1.85px;
-  border-color: black;  
-  color: white;
-  text-align: center;
-  width: 90px;
-  height: 30px;
-  align-items: center;
+.topbar {
+  background-color:yellow;
+  margin-bottom: 0;
+  padding-bottom: 5px;
 }
 
-.body {
-  background:linear-gradient(rgba(1,0,0,0.85),transparent);
+.homepage {
+  background:linear-gradient(rgba(0,0.5,0.5,0.7),transparent);
   background-color: lawngreen;
+  margin-bottom: 0;
+  padding-bottom: 10%;
 }
 
-.title {
-  font-size: 45px;
-  margin-left: 30%;
-  color: yellow;
-  text-decoration-line: underline;
+.homelink {
+  color: black;
+  margin-left: 40%;
+  font-size:13px;
 }
 
-.subtitle1 {
+.homepagesubtitle {
   margin-top: 0;
-  padding-top: 5%;
+  padding-top: 10%;
   padding-bottom: 2.5%;
   margin-left: 3%;
   color: yellow;
   text-decoration-line: underline;
   text-align: center;
+  font-weight: 400;
+  font-family: Segoe UI;
 }
 
-.text {
+.homepagetext {
   font-size: 20px;
-  font-family: Kalam;
+  font-weight: 200;
+  font-family: Segoe UI;
   margin-left: 3%;
   color: yellow;
-  margin-bottom: 20%;
+  margin-bottom: 15%;
   text-align: center;
 }
 
+.calcpage {
+  position:relative;
+}
 
+.calcpage1 {
+  position:relative;
+}
 
+.calcpage:before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.2;
+  background-image: url('chris-liverani-ViEBSoZH6M4-unsplash.jpg');
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: cover;
+}
 
-.App {
+.calclink {
+  color: black;
+  margin-left: 10%;
+  font-size:13px;
+}
+
+.calcpagetext {
+  font-size: 20px;
+  font-weight: 500;
+  font-family: Segoe UI;
+  margin-left: 3%;
+  margin-top: 15%;
+  color: black;
+  margin-bottom: 5%;
   text-align: center;
-  style.left: 50%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.calcpagetextbox {
+  border: 3px solid black;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.button {
+  border-radius: 5px;
+  border:2px solid black;
+  margin-top: 1.5%;
+  margin-bottom: 31.5%;
+  margin-left: 47%;
+  font-size: 13px;
+  background-color: rgb(9, 113, 241); 
+  cursor: pointer;
+  border-color: black;  
   color: white;
+  text-align: center;
+  width: 100px;
+  height: 33px;
 }
 
-.App-link {
-  color: #61dafb;
+.buttonpagebox {
+  border-top:5px solid black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.errorpage {
+  background-color: white;
+}
+
+.errormessage {
+  color: red;
+  font-size: 45px;
+  text-align: center;
+  margin-top: 1%;
+  padding-top: 10%;
+}
+
+.errorhelpmessage {
+  color: black;
+  text-align: center;
+  font-size: 15px;
+}
+
+.homepagebox {
+  border-top:5px solid black;
 }
