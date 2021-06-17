@@ -1,15 +1,31 @@
 import React from 'react';
 import './App.css';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const ErrorPage = () => {
 	
 	return (
 
-		<div className='errorpage'>
+		<div className = 'errorpage'>
 
-			<h1 className='errormessage'>Error 404: Page Not Found</h1>
+			<div className = 'errorpagetopbox'>
 
-			<h1 className='errorhelpmessage'>to redirect to another page, click on either the 'Home' or 'CO2Calculator' link above! </h1>
+				
+				<div>
+
+					<h1 className='errormessage'> This page could not be found! Sorry for any inconvenience! </h1>
+
+				</div>	
+
+				<div>	
+
+					<Link className = 'errorhelpmessage' to = '/' > Return to the homepage... </Link>
+
+				</div>
+
+			
+			</div>
 
 		</div>
 

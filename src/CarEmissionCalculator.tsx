@@ -93,19 +93,17 @@ const CarEmissionsCalculator = () => {
 
         <div className='buttonpagebox'>	
 
-          <h1 className='calcpagetext'> Find out an estimation of how many grams of carbon dioxide your car has produced over it's lifetime! </h1>
+          <div>
 
-          <button 
-          
-        	type='button' 
-        	className='button' 
-        	onClick = { getData }
-          
-        	>
-          
-        	CALCULATE
-          
-        	</button>
+            <div className = 'buttonpagebox1'>  
+
+              <h1 className='calcpagetext'> Find out an estimation of how many grams of carbon dioxide your car has produced over it's lifetime! </h1>
+
+              <button type='button' className='button' onClick = { getData }> CALCULATE </button>
+
+            </div>
+
+          </div>
 
   		  </div>
 
