@@ -57,15 +57,21 @@
   text-align: center;
 }
 
+.homepagebox3 {
+  border-top:4px solid rgba(11, 11, 11, 1);
+  padding:5em;
+  margin-bottom: 10%;
+}
+
 .homepagebox {
-  border-top:2px solid rgba(0,0,0,0.32);
+  border-top:2px solid rgba(11, 11, 11, 1);
   padding:5em;
   margin-bottom: 10%;
 }
 
 .homepagebox1 {
-  border-top:2px solid rgba(0,0,0,0.32);
-  border-bottom: 2px solid rgba(0,0,0,0.32);
+  border-top:2px solid rgba(11, 11, 11, 1);
+  border-bottom: 4px solid rgba(11, 11, 11, 1);
   padding:5em;
   margin-bottom: 10%;
 }
@@ -117,14 +123,30 @@
   text-align: center;
 }
 
+.input {
+  border: none;
+  border-bottom: 3px solid rgb(0, 117, 0, 1);
+  margin-left: 40%;
+  padding: 1em;
+  margin-top: 5%;
+  width: 20%;
+  font-family: Segoe UI;
+}
+
+.input:hover {
+  background-color: rgba(223, 223, 223, 1);
+  border: none;
+  border-bottom: 3px solid rgb(0, 117, 0, 1);  
+}
+
 .button {
   border-radius: 5px;
   border:2px solid black;
-  margin-top: 1.5%;
+  margin-top: 8%;
   margin-bottom: 10%;
-  margin-left: 42.5%;
+  margin-left: 44.5%;
   font-size: 13px;
-  background-color: rgb(0,143,0,1); 
+  background-color: rgb(0, 117, 0, 1); 
   cursor: pointer;
   border-color: black;  
   color: white;
@@ -134,7 +156,7 @@
 }
 
 .button:hover {
-  background-color: rgba(0,103,255,1);
+  background-color: rgba(0, 161, 0, 1);
 }
 
 .buttonpagebox {
@@ -143,8 +165,9 @@
 }
 
 .buttonpagebox1 {
-  border:2px solid black;
+  border:2px solid rgb(0, 117, 0, 1);
   margin-left:1%;
+  background-color: yellow;
 }
 
 /*error*/

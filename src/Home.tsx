@@ -100,7 +100,7 @@ const Home = () => {
 
                     
 
-                    <div id="WhatIsCO2" className ='homepagebox'>    
+                    <div id="WhatIsCO2" className ='homepagebox3'>    
 
                         <h1 className='homepagesubtitle'> What is carbon dioxide? </h1>
 

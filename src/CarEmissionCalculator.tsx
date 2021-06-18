@@ -1,116 +1,104 @@
-import React from 'react';
+import React, { useState } from 'react';
 import App from './App';
-import getData from './App';
 import './App.css';
 import './index.css';
 import { Helmet } from 'react-helmet';
 import { cars } from './CarArray';
+//import React, { useState } from "react";
 
 const CarEmissionsCalculator = () => {
 
-	const getData = () => {
+  const [make, setmake] = useState(String);
+  const [mileage, setmileage] = useState(String);
+
+  const submitForm = (event: React.FormEvent<HTMLFormElement>) => {
+    // Preventing the page from reloading
+    event.preventDefault();
+
+    // Do something 
+    var lowermake = make.toLowerCase();
     
-    // ask for the make
-    var make = prompt('Enter the make of your car here:');
-    
-    // handle cancellation of make prompt
-    if (make === null ) {
-      alert('You have cancelled the calculation!')
-      return;
-    }
-    
-    // handle skipping of make prompt
-    if (make === '' ) {
+    if (make === '') {
       alert('You have to enter a make!')
       return;
     }
-    
-    // if (isNaN(make) === false){
-    //   alert('You have to enter a make!')
-    //   return;
-    // }
-    
-    // allow user to input the make in caps
-    var lowermake = make.toLowerCase();
-    
-    // find index of make in terms of carmake
 
     const search = (obj:any) => obj.carmake === lowermake;
     
     // find index of the array which has the make
     var i = cars.findIndex(search)
-
-    // if the make is not present in array, alert user
+    
     if (i === -1) {
       alert('Please enter a valid car make!')
       return;
     }
+
+    var nummileage : number = +mileage;
     
-    // ask for mileage
-    var mileageinmiles = Number(prompt('Enter the mileage of your car (in miles) here:'))
-    
-    // hand;e cancellation of mileage prompt
-    if (mileageinmiles === null ) {
-      alert('You have cancelled the calculation!')
-      return;
-    }
-    
-    // handle skipping of mileage prompt
-    if (mileageinmiles === 0 ) {
+    if (nummileage === 0 ) {
       alert('You have to enter a mileage!')
       return;
     }
     
     // if mileage is not a number, ask user to input number
-    if (isNaN(mileageinmiles)) {
-      alert('You have to enter a number!')
+    if (isNaN(nummileage)) {
+      alert('The mileage has to be a number!')
       return;
     }
 
-    const mileageinkm = mileageinmiles * 1.60934
-
-    // calculate the total grams of co2 and alert user
-    const TotalEmissions = cars[i].co2 * mileageinkm
-    
+    const TotalEmissions = cars[i].co2 * nummileage
     alert('The total carbon dioxide emitted by your vehicle over its lifespan is: ' + TotalEmissions + ' grams')
+
+  }
+
+  return (
     
-    }
-
-	return (
-
-		
     <div className='calcpage'>
-
-			<Helmet> 
       
-        <title lang = 'en'>
-         Car Emissions Calculator 
-        </title>
-      
-      </Helmet>
+      <div className='calcpage1'>
 
-		  <div className='calcpage1'>
+        <form onSubmit={submitForm}>
 
-        <div className='buttonpagebox'>	
+          <div className='buttonpagebox'>
 
-          <div>
+            <div>  
 
-            <div className = 'buttonpagebox1'>  
+              <div>
 
-              <h1 className='calcpagetext'> Find out an estimation of how many grams of carbon dioxide your car has produced over it's lifetime! </h1>
+                <div className='buttonpagebox1'>  
 
-              <button type='button' className='button' onClick = { getData }> CALCULATE </button>
+                  <input
+                    value={make}
+                    onChange={(e) => setmake(e.target.value)}
+                    type="text"
+                    placeholder="Enter the make"
+                    className="input"
+                  />
+
+                  <input
+                    value={mileage}
+                    onChange={(e) => setmileage(e.target.value)}
+                    type="string"
+                    placeholder="Enter the mileage"
+                    className="input"
+                  />
+
+                  <button type="submit" className="button">Submit</button>
+            
+                </div>
+
+              </div>
 
             </div>
 
           </div>
 
-  		  </div>
+        </form>
 
       </div>
-
+    
     </div>
-	);
-}
+  );
+};
 
 export default CarEmissionsCalculator; 
