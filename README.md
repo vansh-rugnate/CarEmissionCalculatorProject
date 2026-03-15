@@ -5,7 +5,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This React WebApp is a personal project aimed at raising awareness of the effects of global warming. The homepage displays information about what global warming is and some facts around it.
+This React web application is a personal project aimed at raising awareness of the effects of global warming. The homepage displays information about what global warming is and some facts around it.
 
 This project features a calculator which computes the amount of carbon dioxide a car has emitted over its lifetime. It uses JavaScript (TypeScript) prompt, confirm and alert boxes to get user input and display the CO2 calculation.
 
